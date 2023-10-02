@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="reset.css" media="screen" />
     <link rel="stylesheet" href="styles.css" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -27,8 +29,21 @@
     
     <h1>Find a playlist to suit your mood</h1>
 
+        <div id="vidContainer" class="videoText">
+        
+               </div> 
+           
+               <button onclick="simpleTest()" style="padding: 8px 12px; margin: 0px 8px; background-color:rgb(0, 0, 0); color: #fff;">Push to start</button>
+           
+               <button onclick="setVideo1()" style="padding: 8px 12px; margin: 0px 8px; background-color:rgb(5, 96, 17); color: #fff;">Change to Video 1</button>
+               <button onclick="setVideo2()" style="padding: 8px 12px; margin: 0px 8px; background-color:rgb(37, 9, 122); color: #fff;">Change to Video 2</button>
+               <button onclick="setVideo3()" style="padding: 8px 12px; margin: 0px 8px; background-color:rgb(180, 29, 97); color: #fff;">Change to Video 3</button>
+              
+              
+               <div id="player"></div>
 
-    <script src="javascript.js"> </script>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
