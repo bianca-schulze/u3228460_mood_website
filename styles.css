@@ -1,0 +1,123 @@
+div {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-width: 80px;
+    }
+
+    html {
+        background-image: linear-gradient(to right top, #ff70a6, #cd679e, #9d5c8d, #725075, #4e4258, #413b4a, #36343b, #2c2c2c, #2c2c2c, #2c2c2c, #2c2c2c, #2c2c2c);
+    }
+
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        color: white;
+        padding: 0;
+        text-align: center;
+    
+    }
+
+    h1 {
+        font-weight: 100;
+        font-size: 2rem;
+    }
+
+    b {
+        font-weight: 700;
+    }
+
+    header {
+        color: #fff;
+        padding: 25px;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        align-items: center; 
+        margin-bottom: 100px;
+        
+    }
+    
+    .logo img {
+        max-width: 200px;
+    }
+    
+    /* Style the logo */
+    .logo {
+
+    }
+    
+    /* Style the navigation bar using CSS Grid */
+    .main-nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+        gap: 30px; 
+        justify-content: center;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    
+    .main-nav a {
+        font-weight: 700;
+        text-decoration: none;
+        max-width: 150px;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .main-nav a:hover {
+        background-color: #777;
+    }
+    
+    /* about call out box */
+    .callout {
+        display: grid;
+        align-items: center; /* Vertically center children */
+        padding: 70px 400px;
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+        text-align: left;
+    }
+
+    .callout h2 {
+        margin-right: 20px; /* Add space to separate the heading from text */
+        font-size: 2rem; /* Increase the heading font size */
+    }
+    
+    .callout p {
+        margin: 0; /* Remove default margin for the text */
+        flex: 1; /* Allow the text to expand and fill the available space */
+        color: white;
+        line-height: 1.75rem;
+    }
+
+    .callout a {
+        max-width: none;
+    }
+    
+    .callout button {
+        background-color: #fff;
+        color: #000;
+        font-size: 1.05rem;
+        font-weight: 100;
+        margin-top: 30px;
+        max-width: 200px;
+        border: none;
+        padding: 15px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+  
+    
+    .callout button:hover {
+        background-color: #555;
+        color: #fff;
+    }
+    
+    
+    
+    
+    
