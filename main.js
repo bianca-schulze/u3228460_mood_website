@@ -1,103 +1,118 @@
+var video1 = "";
+var video2 = "";
+var video3 = "";
+var video4 = "";
+var video5 = "";
+var video6 = "";
+var selectedVideo = ""; 
 
-var video1 = ""
-var video2 = ""
-var video3 = ""
+function startup() {
+  var apiKey = "AIzaSyCEAcHSbtmdiFrFVck042l83I83utd8CTw"; 
+  var keywords = ["Accoustic", "Jazz", "Classical", "Pop", "RNB", "Metal"];
 
+  keywords.forEach(function (keyword, index) {
+    const query = keyword + ' music';
+    const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&q=${query}&part=snippet&type=video`;
 
-var apiKey = "AIzaSyBsSHP_xADDTemOZHM9PsQvj1KxLhl3fcU"
+    $.getJSON(url, function (apiData) {
+      var data = apiData.items;
+      
 
-var keyword1 = "Happy";
-var keyword2 = "Gym";
-var keyword3 = "chill";
-
-
-
-
-var searchText = keyword1 + "%20" + keyword2 + "%20" + keyword3 + "%20" +  "music";
-
-var url = "https://www.googleapis.com/youtube/v3/search?key=" + apiKey + "&q=" + searchText + "&maxResults=15&order=rating&regionCode=AU&type=video&videoDuration=long&videoEmbeddable=true&part=snippet";
-
-function simpleTest() {
-
-  console.log(url);
-  $(document).ready(function () {
-  $.getJSON(url, function (apiData) {
-
-   console.log("apiData = ", apiData);
-
-   var data = apiData.items;
-
-     video1 = data[0].id.videoId;
-     console.log("video1 ID = ", video1);
-
-
-     video2 = data[1].id.videoId;
-     console.log("video2 ID = ", video2);
-
-
-     video3 = data[2].id.videoId;
-     console.log("video3 ID = ", video3);
-
-    })
-  })
-}
-
-var videoID = ""
-
-function setVideo1(){
-  loadVideo(video1)
-}
-
-function setVideo2(){
-  loadVideo(video2)
-  }
-
-function setVideo3(){
-  loadVideo(video3)
+      if (data && data.length > 0) {
+        window['video' + (index + 1)] = data[0].id.videoId;
+        console.log("video" + (index + 1) + " ID = ", window['video' + (index + 1)]);
+      }
+    });
+  });
 }
 
 function loadVideo(videoID) {
-  if(player) { player.loadVideoById(videoID); }
+  if (player) {
+    player.loadVideoById(videoID);
+  }
+
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '390',
+      width: '640',
+      videoId: videoID,
+      playerVars: {
+        'playsinline': 1
+      },
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+
+  var done = false;
+  function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+      setTimeout(stopVideo, 6000);
+      done = true;
+    }
+  }
+
+  function stopVideo() {
+    player.stopVideo();
+  }
+}
+
+// Function to set the selected video
+function setVideo(videoID) {
+  selectedVideo = videoID;
+}
+
+// Function to play the selected video
+function playSelectedVideo() {
+  if (selectedVideo) {
+    loadVideo(selectedVideo);
+    document.getElementById('videoContainer').style.display = 'block'; // Show the video player
+  } else {
+    console.error("No video selected.");
+  }
 }
 
 
-
-   var tag = document.createElement('script');
-
-   tag.src = "https://www.youtube.com/iframe_api";
-   var firstScriptTag = document.getElementsByTagName('script')[0];
-   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// Event listener for the "Go" button
+document.getElementById('goButton').addEventListener('click', playSelectedVideo);
 
 
-   var player;
-   function onYouTubeIframeAPIReady() {
-     player = new YT.Player('player', {
-       height: '390',
-       width: '640',
-       videoId: videoID,
-       playerVars: {
-         'playsinline': 1
-       },
-       events: {
-         'onReady': loadVideo(),
-         'onStateChange': onPlayerStateChange
-       }
-     });
-   }
+// Add functions for all six videos
+function setVideo1() {
+  setVideo(video1);
+}
 
-   function onPlayerReady(event) {
-     event.target.playVideo();
-   }
+function setVideo2() {
+  setVideo(video2);
+}
 
+function setVideo3() {
+  setVideo(video3);
+}
 
-   var done = false;
-   function onPlayerStateChange(event) {
-     if (event.data == YT.PlayerState.PLAYING && !done) {
-       setTimeout(stopVideo, 6000);
-       done = true;
-     }
-   }
-   function stopVideo() {
-     player.stopVideo();
-   }
+function setVideo4() {
+  setVideo(video4);
+}
 
+function setVideo5() {
+  setVideo(video5);
+}
+
+function setVideo6() {
+  setVideo(video6);
+}
+
+// Call the startup function to load initial video data
+startup();
