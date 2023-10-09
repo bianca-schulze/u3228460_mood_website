@@ -4,11 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
   <title>Test</title>
   <link rel="stylesheet" href="reset.css" media="screen" />
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -19,38 +18,51 @@
     <nav class="main-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="#">Contact</a>
+      <a href="index.html">Restart</a>
     </nav>
   </header>
 
   <h1>Choose a Music Genre</h1>
 
-  <div id="mood">
-    <!-- Add a button for each music genre -->
-    <button onclick="setVideo1()"
-      style="padding: 8px 12px; margin: 0px 8px; background-color:rgb(5, 96, 17); color: #fff;">Acoustic</button>
-    <button onclick="setVideo2()"
-      style="padding: 8px 12px; margin: 0px 8px; background-color:rgb(37, 9, 122); color: #fff;">Jazz</button>
-    <button onclick="setVideo3()"
-      style="padding: 8px 12px; margin: 0px 8px; background-color:rgb(180, 29, 97); color: #fff;">Classical</button>
-    <button onclick="setVideo4()"
-      style="padding: 8px 12px; margin: 0px 8px; background-color:rgb(52, 138, 155); color: #fff;">Pop</button>
-    <button onclick="setVideo5()"
-      style="padding: 8px 12px; margin: 0px 8px; background-color:rgb(164, 85, 157); color: #fff;">RNB</button>
-    <button onclick="setVideo6()"
-      style="padding: 8px 12px; margin: 0px 8px; background-color:rgb(209, 161, 27); color: #fff;">Metal</button>
+  <div class="centre">
+    <ul class="mood">
+      <!-- Music genre buttons -->
+      <li><button id="genreButton0">Acoustic</button></li>
+      <li><button id="genreButton1">Jazz</button></li>
+      <li><button id="genreButton2">Classical</button></li>
+      <li><button id="genreButton3">Pop</button></li>
+      <li><button id="genreButton4">RNB</button></li>
+      <li><button id="genreButton5">Metal</button></li>
+    </ul>
+  </div>
 
-    <!-- Add a "Go" button to play the selected video -->
-    <button id="goButton"
-    style="padding: 8px 12px; margin: 16px 8px; background-color:rgb(0, 0, 0); color: #fff;">Go</button>
-  
+  <h2 id="padding">What energy level do you want to match?</h2>
+  <div class="centre">
+    <ul class="mood2">
+      <!-- Energy level buttons -->
+      <li><button id="energyButton0">Low Energy</button></li>
+      <li><button id="energyButton1">High Energy</button></li>
+    </ul>
+  </div>
+
+  <div class="centre">
+   <a href="#vid"><button id="goButton" style="padding: 8px 12px; margin: 16px 8px; background-color:rgb(0, 0, 0); color: #fff;">Go</button></a>
+  </div>
 
   <!-- Video player container -->
+ <div id="vid" class="centre">
   <div id="videoContainer" style="display: none;">
     <h1>Now Playing</h1>
     <div id="player"></div>
+    <br>
+    <div class="rstbox">
+    <a class="restart" href="index.html">Restart</a>
+</div> 
   </div>
 
+</div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="main.js"></script>
 </body>
 
