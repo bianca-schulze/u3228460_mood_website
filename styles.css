@@ -1,214 +1,228 @@
 /* Global styles */
 html {
-    background-image: linear-gradient(to right top, #ff70a6, #cd679e, #9d5c8d, #725075, #4e4258, #413b4a, #36343b, #2c2c2c, #2c2c2c, #2c2c2c, #2c2c2c, #2c2c2c);
-    height: 150%;
-    scroll-behavior:smooth;
-  }
-  
-  body {
-    font-family: Helvetica, Arial, sans-serif;
-    color: #fff;
-  }
-  
-  h1 {
-    font-weight: 100;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
+  background-image: linear-gradient(
+    to right top,
+    #ff70a6,
+    #cd679e,
+    #9d5c8d,
+    #725075,
+    #4e4258,
+    #413b4a,
+    #36343b,
+    #2c2c2c,
+    #2c2c2c,
+    #2c2c2c,
+    #2c2c2c,
+    #2c2c2c
+  );
+  height: 150%;
+  scroll-behavior: smooth;
+}
 
-  h2 {
-    font-weight: 100;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-top: 2em;
-  }
-  
-  b {
-    font-weight: 700;
-  }
-  
-  /* Header styles */
-  header {
-    padding: 25px;
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    align-items: center;
-    margin-bottom: 100px;
-  }
-  
-  .logo img {
-    max-width: 200px;
-  }
-  
-  /* Navigation styles */
-  .main-nav {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    justify-content: center;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-  
-  .main-nav a {
-    font-weight: 700;
-    text-decoration: none;
-    max-width: 150px;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .main-nav a:hover {
-    background-color: #777;
-  }
-  
-  /* Mood selection styles */
-  .selection1 {
-    justify-content: center;
-  }
-  
-  #padding {
-    padding: 2rem;
-  }
-  .mood {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-width: 80px;
-    max-width: 50%;
-  }
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #fff;
+}
 
-  .mood2 {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: 1fr;
-    column-width: 80px;
-    max-width: 50%;
-  }
-  
-  .centre {
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Callout box styles */
-  .callout {
-    display: grid;
-    align-items: center;
-    padding: 70px 400px;
-    grid-template-columns: 1fr;
-    row-gap: 50px;
-    text-align: left;
-  }
-  
-  .callout h2 {
-    margin-right: 20px;
-    font-size: 2rem;
-  }
-  
-  .callout p {
-    margin: 0;
-    flex: 1;
-    color: white;
-    line-height: 1.75rem;
-  }
-  
-  .callout a {
-    max-width: none;
-  }
-  
-  .callout button:hover {
-    background-color: #555;
-    color: #fff;
-  }
-  
-  /* Video container styles */
-  #vidContainer {
-    background-color: #ff70a6;
-  }
-  
-  /* Styled buttons */
-  ul {
-    padding: 0;
-    list-style-type: none;
-  }
-  
-  li {
-    position: relative;
-    margin-top: 0.8em;
-    cursor: pointer;
-  }
-  
-  button {
-    font-size: 25px;
-    width: 8em;
-    height: 2em;
-    color: palevioletred;
-    border-left: 0.08em solid;
-    position: relative;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    transition: transform 0.3s;
-    border-radius: 1em ;
-  }
-  
-  button::before,
-  button::after {
-    position: absolute;
-    width: inherit;
-    border-left: inherit;
-    y-index: -1;
-  }
-  
-  button::before {
-    height: 80%;
-    top: 10%;
-    left: calc(-0.15em - 0.08em * 2);
-  }
-  
-  button::after {
-    height: 60%;
-    top: 20%;
-    left: calc(-0.15em * 2 - 0.08em * 3);
-  }
-  
-  button:hover {
-    transform: translateY(-0.15em);
-color: yellowgreen;
-transition: 0.5s;
-background-color: rgba(255, 182, 193, .4);
-cursor: pointer;
-  }
+h1 {
+  font-weight: 100;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
-  button:focus {
-    transform: translateY(-0.15em);
-    color: purple;
-    transition: 0.5s;
-    background-color: rgba(255, 182, 193, .4);
-  }
+h2 {
+  font-weight: 100;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 2em;
+}
 
-  .rstbox {
-    text-align: center;
-    padding: 4rem;
-  }
+b {
+  font-weight: 700;
+}
 
-  .restart {
-    font-weight: 600;
-    font-size: 1.3rem;
-    text-decoration: none;
-    max-width: 150px;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-  }
+/* Header styles */
+header {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+  margin-bottom: 100px;
+}
 
-  .main-nav a:hover {
-    background-color: #777;
-  }
+.logo img {
+  max-width: 200px;
+}
+
+/* Navigation styles */
+.main-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.main-nav a {
+  font-weight: 700;
+  text-decoration: none;
+  max-width: 150px;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover {
+  background-color: #777;
+}
+
+/* Mood selection styles */
+.selection1 {
+  justify-content: center;
+}
+
+#padding {
+  padding: 2rem;
+}
+.mood {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-width: 80px;
+  max-width: 50%;
+}
+
+.mood2 {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  column-width: 80px;
+  max-width: 50%;
+}
+
+.centre {
+  display: flex;
+  justify-content: center;
+}
+
+/* Callout box styles */
+.callout {
+  display: grid;
+  align-items: center;
+  padding: 70px 400px;
+  grid-template-columns: 1fr;
+  row-gap: 50px;
+  text-align: left;
+}
+
+.callout h2 {
+  margin-right: 20px;
+  font-size: 2rem;
+}
+
+.callout p {
+  margin: 0;
+  flex: 1;
+  color: white;
+  line-height: 1.75rem;
+}
+
+.callout a {
+  max-width: none;
+}
+
+.callout button:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+/* Video container styles */
+#vidContainer {
+  background-color: #ff70a6;
+}
+
+/* Styled buttons */
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  position: relative;
+  margin-top: 0.8em;
+  cursor: pointer;
+}
+
+button {
+  font-size: 25px;
+  width: 8em;
+  height: 2em;
+  color: palevioletred;
+  border-left: 0.08em solid;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: transform 0.3s;
+  border-radius: 1em;
+}
+
+button::before,
+button::after {
+  position: absolute;
+  width: inherit;
+  border-left: inherit;
+  y-index: -1;
+}
+
+button::before {
+  height: 80%;
+  top: 10%;
+  left: calc(-0.15em - 0.08em * 2);
+}
+
+button::after {
+  height: 60%;
+  top: 20%;
+  left: calc(-0.15em * 2 - 0.08em * 3);
+}
+
+button:hover {
+  transform: translateY(-0.15em);
+  color: yellowgreen;
+  transition: 0.5s;
+  background-color: rgba(255, 182, 193, 0.4);
+  cursor: pointer;
+}
+
+button:focus {
+  transform: translateY(-0.15em);
+  color: purple;
+  transition: 0.5s;
+  background-color: rgba(255, 182, 193, 0.4);
+}
+
+.rstbox {
+  text-align: center;
+  padding: 4rem;
+}
+
+.restart {
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-decoration: none;
+  max-width: 150px;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover {
+  background-color: #777;
+}

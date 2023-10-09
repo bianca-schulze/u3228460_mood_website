@@ -1,4 +1,4 @@
-var apiKey = "AIzaSyCEAcHSbtmdiFrFVck042l83I83utd8CTw"; 
+var apiKey = "AIzaSyCEAcHSbtmdiFrFVck042l83I83utd8CTw";
 var musicGenres = ["Acoustic", "Jazz", "Classical", "Pop", "RNB", "Metal"];
 var energyLevels = ["Low Energy", "High Energy"];
 var selectedMusicGenre = "";
@@ -16,17 +16,17 @@ function loadVideo(videoID) {
   var player;
 
   function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '390',
-      width: '640',
+    player = new YT.Player("player", {
+      height: "390",
+      width: "640",
       videoId: videoID,
       playerVars: {
-        'playsinline': 1
+        playsinline: 1,
       },
       events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-      }
+        onReady: onPlayerReady,
+        onStateChange: onPlayerStateChange,
+      },
     });
   }
 
@@ -61,9 +61,11 @@ function playSelectedVideo() {
       if (data && data.length > 0) {
         var videoId = data[0].id.videoId;
         loadVideo(videoId);
-        document.getElementById('videoContainer').style.display = 'block'; // Show the video player
+        document.getElementById("videoContainer").style.display = "block"; // Show the video player
       } else {
-        console.error("No video found for the selected genre and energy level.");
+        console.error(
+          "No video found for the selected genre and energy level."
+        );
       }
     });
   } else {
@@ -74,20 +76,26 @@ function playSelectedVideo() {
 // Event listeners for music genre buttons
 for (var i = 0; i < musicGenres.length; i++) {
   (function (index) {
-    document.getElementById(`genreButton${index}`).addEventListener('click', function () {
-      setMusicGenre(index);
-    });
+    document
+      .getElementById(`genreButton${index}`)
+      .addEventListener("click", function () {
+        setMusicGenre(index);
+      });
   })(i);
 }
 
 // Event listeners for energy level buttons
 for (var i = 0; i < energyLevels.length; i++) {
   (function (index) {
-    document.getElementById(`energyButton${index}`).addEventListener('click', function () {
-      setEnergyLevel(index);
-    });
+    document
+      .getElementById(`energyButton${index}`)
+      .addEventListener("click", function () {
+        setEnergyLevel(index);
+      });
   })(i);
 }
 
 // Event listener for the "Go" button
-document.getElementById('goButton').addEventListener('click', playSelectedVideo);
+document
+  .getElementById("goButton")
+  .addEventListener("click", playSelectedVideo);
