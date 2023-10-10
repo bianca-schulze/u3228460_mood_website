@@ -14,6 +14,8 @@ function setEnergyLevel(levelIndex) {
 
 function loadVideo(videoID) {
   var player;
+	console.log('in load video');
+	console.log('video id: ' + videoID)
 
   function onYouTubeIframeAPIReady() {
     player = new YT.Player("player", {
@@ -21,7 +23,7 @@ function loadVideo(videoID) {
       width: "640",
       videoId: videoID,
       playerVars: {
-        playsinline: 1,
+        playsinline: 1
       },
       events: {
         onReady: onPlayerReady,
@@ -53,10 +55,15 @@ function loadVideo(videoID) {
 function playSelectedVideo() {
   if (selectedMusicGenre && selectedEnergyLevel) {
     const query = selectedMusicGenre + " " + selectedEnergyLevel + " music";
+
+		console.log(query);
+
     const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&q=${query}&part=snippet&type=video`;
 
     $.getJSON(url, function (apiData) {
       var data = apiData.items;
+
+			console.log(data);
 
       if (data && data.length > 0) {
         var videoId = data[0].id.videoId;
@@ -76,9 +83,14 @@ function playSelectedVideo() {
 // Event listeners for music genre buttons
 for (var i = 0; i < musicGenres.length; i++) {
   (function (index) {
-    document
-      .getElementById(`genreButton${index}`)
-      .addEventListener("click", function () {
+    // document
+		// BEN: slightly rewrite this so we can easily access the current button
+      var button = document.getElementById(`genreButton${index}`)
+			//now we can use button variable to add the event listener
+      button.addEventListener("click", function () {
+				//then we can add a class when we click on it
+				// just style the active class to be the same as the focus styles
+				button.classList.add('active');
         setMusicGenre(index);
       });
   })(i);
@@ -88,8 +100,9 @@ for (var i = 0; i < musicGenres.length; i++) {
 for (var i = 0; i < energyLevels.length; i++) {
   (function (index) {
     document
-      .getElementById(`energyButton${index}`)
-      .addEventListener("click", function () {
+      var button = document.getElementById(`energyButton${index}`)
+      button.addEventListener("click", function () {
+				button.classList.add('active');
         setEnergyLevel(index);
       });
   })(i);
