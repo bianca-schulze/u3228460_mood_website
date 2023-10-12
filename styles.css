@@ -1,7 +1,7 @@
 /* Global styles */
 html {
   background-image: linear-gradient(
-    to right top,
+    to top right,
     #ff70a6,
     #cd679e,
     #9d5c8d,
@@ -15,13 +15,62 @@ html {
     #2c2c2c,
     #2c2c2c
   );
-  height: 150%;
+  height: 160%;
   scroll-behavior: smooth;
 }
 
+/* Normal state */
+.normal-background {
+  background-image: linear-gradient(
+    to top right,
+    #ff70a6,
+    #cd679e,
+    #9d5c8d,
+    #725075,
+    #4e4258,
+    #413b4a,
+    #36343b,
+    #2c2c2c,
+    #2c2c2c,
+    #2c2c2c,
+    #2c2c2c,
+    #2c2c2c
+  );
+  height: 100%;
+  scroll-behavior: smooth;
+  background-attachment: fixed;
+}
+
+/* Expanded state */
+.expanded-background {
+  background-image: linear-gradient(
+    to right top,
+    #ff70a6,
+    #cd679e,
+    #9d5c8d,
+    #725075,
+    #4e4258,
+    #413b4a,
+    #36334a,
+    #2c2c2c,
+    #2c2c2c,
+    #2c2c2c,
+    #2c2c2c
+  );
+  height: 170%;
+  scroll-behavior: smooth;
+}
+
+.about {
+  height: 100%;
+}
+
+/* Main elements */
 body {
   font-family: Helvetica, Arial, sans-serif;
-  color: #fff;
+  color: #ffffff;
+  height: 100%;
+  margin: 0;
 }
 
 h1 {
@@ -48,21 +97,31 @@ header {
   display: grid;
   grid-template-columns: 1fr 4fr;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 0;
 }
 
 .logo img {
   max-width: 200px;
 }
 
+.improve-mood {
+  margin-top: auto;
+  height: 100px;
+  background-image: url("assets/images/improve-mood.png");
+  background-repeat: no-repeat;
+  background-position: 75% 25%;
+  background-size: 12%;
+}
+
 /* Navigation styles */
 .main-nav {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  justify-content: center;
-  padding-left: 100px;
-  padding-right: 100px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.main-nav img {
+  max-height: 35px;
 }
 
 .main-nav a {
@@ -93,7 +152,6 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-width: 80px;
-  max-width: 50%;
 }
 
 .mood2 {
@@ -107,6 +165,25 @@ header {
 .centre {
   display: flex;
   justify-content: center;
+}
+
+#left {
+  text-align: left;
+}
+
+#vid {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#videoContainer {
+  display: none;
+  text-align: center;
+}
+#idResetbox {
+  display: none;
 }
 
 /* Callout box styles */
@@ -140,11 +217,6 @@ header {
   color: #fff;
 }
 
-/* Video container styles */
-#vidContainer {
-  background-color: #ff70a6;
-}
-
 /* Styled buttons */
 ul {
   padding: 0;
@@ -156,6 +228,8 @@ li {
   margin-top: 0.8em;
   cursor: pointer;
 }
+
+/* buttons */
 
 button {
   font-size: 25px;
@@ -193,29 +267,46 @@ button::after {
 
 button:hover {
   transform: translateY(-0.15em);
-  color: yellowgreen;
+  color: rgba(255, 255, 255, 0.5), green, blue;
   transition: 0.5s;
-  background-color: rgba(255, 182, 193, 0.4);
+  background-color: rgba(255, 182, 193, 0.1);
   cursor: pointer;
 }
 
 button:focus {
   transform: translateY(-0.15em);
-  color: purple;
+  color: white;
   transition: 0.5s;
   background-color: rgba(255, 182, 193, 0.4);
 }
 
+.btn-clicked {
+  transform: translateY(-0.15em);
+  color: white;
+  transition: 0.5s;
+  background-color: rgba(255, 182, 193, 0.4);
+}
+
+.blue {
+  color: #70d5ff;
+}
+
+.yellow {
+  color: #e7fe72;
+}
+
+/* Restart arrow */
+
 .rstbox {
   text-align: center;
-  padding: 4rem;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .restart {
   font-weight: 600;
   font-size: 1.3rem;
   text-decoration: none;
-  max-width: 150px;
   color: #fff;
   text-align: center;
   padding: 10px;
@@ -223,6 +314,171 @@ button:focus {
   transition: background-color 0.3s ease;
 }
 
+.restart img {
+  max-height: 60px;
+}
+
+.restart img:hover {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
+}
+
 .main-nav a:hover {
   background-color: #777;
+}
+
+/* Go button */
+#goButton {
+  padding: 8px 12px;
+  margin: 4.5rem 1rem;
+  color: #fff;
+  background-color: #000;
+}
+
+#goButton:hover {
+  padding: 8px 12px;
+  margin: 4.5rem 1rem;
+  color: #000;
+  transition: 1s;
+  background: rgb(255, 112, 165);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 112, 165, 1) 0%,
+    rgba(255, 150, 112, 1) 33%,
+    rgba(232, 255, 112, 1) 71%,
+    rgba(112, 213, 255, 1) 100%
+  );
+}
+
+#goButton:focus {
+  padding: 8px 12px;
+  margin: 4.5rem 1rem;
+  color: #000;
+  background: rgb(255, 112, 165);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 112, 165, 1) 0%,
+    rgba(255, 150, 112, 1) 33%,
+    rgba(232, 255, 112, 1) 71%,
+    rgba(112, 213, 255, 1) 100%
+  );
+}
+
+#goButton::before,
+#goButton::after {
+  position: absolute;
+  width: inherit;
+  border-left: inherit;
+  y-index: 2;
+}
+
+/* About button */
+.new-button {
+  padding: 8px 12px;
+  color: #000;
+  transition: 1s;
+  background: rgb(255, 112, 165);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 112, 165, 1) 0%,
+    rgba(255, 150, 112, 1) 33%,
+    rgba(232, 255, 112, 1) 71%,
+    rgba(112, 213, 255, 1) 100%
+  );
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  html {
+    background-size: 200%;
+  }
+
+  .mood {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .mood2 {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  #padding {
+    padding: 1rem;
+  }
+
+  .centre {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Video container styles */
+  #videoContainer {
+    position: relative;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  #videoContainer::after {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+  }
+
+  #videoContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  float: none !important;
+
+  .mood {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .improve-mood {
+    background-size: 30%;
+
+    html.expanded-background {
+      height: 200%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #videoContainer iframe {
+    margin-top: 50px;
+  }
+
+  #videoContainer h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  float: none !important;
+
+  .mood {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .improve-mood {
+    background-size: 10%;
+    height: 200px;
+    margin-top: -40px;
+  }
 }

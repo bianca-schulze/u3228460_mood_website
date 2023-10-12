@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html class="normal-background">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test</title>
     <link rel="stylesheet" href="reset.css" media="screen" />
     <link rel="stylesheet" href="styles.css" />
@@ -11,57 +11,77 @@
 </head>
 
 <body>
+    <!-- Header with logo and navigation -->
     <header>
         <div class="logo">
-            <img src="assets/images/mood-logo-white.png" alt="Logo">
+            <a href="index.html">
+                <img src="assets/images/mood-logo-white.png"
+                    alt="Logo" />
+            </a>
         </div>
+        <!-- Main navigation -->
         <nav class="main-nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="index.html">Restart</a>
+            <a href="index.html">
+                <img src="assets/images/icon-restart.png"
+                    alt="restart backwards arrow" />
+            </a>
+            <a href="about.html">
+                <img src="assets/images/icon-about.png"
+                    alt="about question mark" />
+            </a>
         </nav>
     </header>
 
-    <h1>Choose a Music Genre</h1>
+    <!-- Mood selection section -->
+    <div class="improve-mood">
+    </div>
 
+    <!-- Mood selection buttons -->
+    <h1>Choose a <b>music genre</b></h1>
     <div class="centre">
         <ul class="mood">
-            <!-- Music genre buttons -->
-            <li><button id="genreButton0">Acoustic</button></li>
-            <li><button id="genreButton1">Jazz</button></li>
-            <li><button id="genreButton2">Classical</button></li>
-            <li><button id="genreButton3">Pop</button></li>
-            <li><button id="genreButton4">RNB</button></li>
-            <li><button id="genreButton5">Metal</button></li>
+            <li><button class="btn" id="genreButton0">Acoustic</button></li>
+            <li><button class="btn" id="genreButton1">Jazz</button></li>
+            <li><button class="btn" id="genreButton2">Classical</button></li>
+            <li><button class="btn" id="genreButton3">Pop</button></li>
+            <li><button class="btn" id="genreButton4">RNB</button></li>
+            <li><button class="btn" id="genreButton5">Metal</button></li>
         </ul>
     </div>
 
-    <h2 id="padding">What energy level do you want to match?</h2>
+    <h2 id="padding">What <b>energy</b> level do you want to <b>match</b>?</h2>
     <div class="centre">
         <ul class="mood2">
-            <!-- Energy level buttons -->
-            <li><button id="energyButton0">Low Energy</button></li>
-            <li><button id="energyButton1">High Energy</button></li>
+            <li><button class="btn" id="energyButton0">Low Energy</button></li>
+            <li><button class="btn" id="energyButton1">High Energy</button></li>
         </ul>
     </div>
 
+    <!-- Go button to trigger music selection -->
     <div class="centre">
-        <a href="#vid"><button id="goButton"
-                style="padding: 8px 12px; margin: 16px 8px; background-color:rgb(0, 0, 0); color: #fff;">Go</button></a>
+        <a href="#vid"><button id="goButton">Go</button></a>
     </div>
 
     <!-- Video player container -->
-    <div id="vid" class="centre">
-        <div id="videoContainer" style="display: none;">
-            <h1>Now Playing</h1>
+    <div>
+        <div id="videoContainer">
+            <h1 class="coloured-text">Here are some <b class="blue">tunes</b> tailored to your <b
+                    class="yellow">mood</b>...</h1>
             <div id="player"></div>
-            <br>
-            <div class="rstbox">
-                <a class="restart" href="index.html">Restart</a>
-            </div>
         </div>
+        <br />
+        <!-- Restart button -->
+        <div id="idResetbox" class="rstbox">
+            <a class="restart" href="index.html">
+                <img src="assets/images/icon-restart-coloured.png"
+                    alt="restart icon" />
+            </a>
+        </div>
+    </div>
+    <div id="vid">
 
     </div>
+    <!-- JavaScript files -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="main.js"></script>
