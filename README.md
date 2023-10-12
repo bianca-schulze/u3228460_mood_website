@@ -18,6 +18,9 @@ Having never worked with APIs before, I found this assignment challenging, yet r
 ### CSS/HTML
 After learning HTML and CSS over a year ago, I found it really difficult to remember a lot of the basic semantics of HTML and CSS rules. It didn't take too long to quickly get back up to speed, however I did need to constantly Google things like how to align grid items, which took more time than anticipated. Further to this, remembering how to create responsive design and add media queries was a whole other side mission that took a few hours to work out.
 
+### SCRUM Methodology 
+I see many benefits to working in an agile way using the SCRUM method. I think it’s great to come together once a week and showcase the work we had achieved the week prior as it felt validating to know that others were in the same boat as me, having similar frustrations. Yet it also felt very beneficial as we were able to work together to showcase ideas, suggest improvements and solve problems. 
+
 ### Overall
 Overall I am really happy with the result, despite the hurdles it took to get there. It meets the brief that I set myself during the first assignment, by providing music tailored to the user that intends to elevate their mood. The best part is, I can easily see myself using the app in the future.
 
