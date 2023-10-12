@@ -19,7 +19,7 @@ Having never worked with APIs before, I found this assignment challenging, yet r
 After learning HTML and CSS over a year ago, I found it really difficult to remember a lot of the basic semantics of HTML and CSS rules. It didn't take too long to quickly get back up to speed, however I did need to constantly Google things like how to align grid items, which took more time than anticipated. Further to this, remembering how to create responsive design and add media queries was a whole other side mission that took a few hours to work out.
 
 ### Overall
-I am really happy with the result, despite the hurdles it took to get there, and the best part is, I can actually see myself using it in the future.
+Overall I am really happy with the result, despite the hurdles it took to get there. It meets the brief that I set myself during the first assignment, by providing music tailored music to the user that will help to elevate their mood. The best part is, I can easily see myself using the app in the future.
 
 ## References
 1. [Stack Overflow](https://stackoverflow.com/): The Stack Overflow community played a crucial role in troubleshooting technical issues and finding solutions to specific coding problems.
